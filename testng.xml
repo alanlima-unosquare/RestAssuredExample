@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Reqres Suite">
+    <test name="Users and Unknown Test">
+        <classes>
+            <class name="tests.RestTests"/>
+        </classes>
+    </test>
+</suite>
