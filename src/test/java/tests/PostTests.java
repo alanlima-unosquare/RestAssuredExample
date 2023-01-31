@@ -12,7 +12,6 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class PostTests {
 
-
     private APICore apiCore;
 
     @BeforeClass
@@ -22,7 +21,7 @@ public class PostTests {
 
     @Test
     public void validateNewUser() throws ParseException, IOException {
-        Response response = apiCore.sendPost("newUser.json", "users");
+        Response response = apiCore.post("newUser.json", "users");
         response.then()
                 .assertThat()
                 .statusCode(equalTo(201));
@@ -30,9 +29,25 @@ public class PostTests {
 
     @Test
     public void validateLogin() throws ParseException, IOException {
-        Response response = apiCore.sendPost("existingUser.json", "unknown");
+        Response response = apiCore.post("existingUser.json", "unknown");
         response.then()
                 .assertThat()
                 .statusCode(equalTo(201));
+    }
+
+    @Test
+    public void validateRegister() throws ParseException, IOException {
+        Response response = apiCore.post("registerUser.json", "register");
+        response.then()
+                .assertThat()
+                .statusCode(equalTo(200));
+    }
+
+    @Test
+    public void validateRegisterUnsuccessful() throws ParseException, IOException {
+        Response response = apiCore.post("registerUserUnsuccessful.json", "register");
+        response.then()
+                .assertThat()
+                .statusCode(equalTo(400));
     }
 }

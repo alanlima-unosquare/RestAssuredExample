@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Reqres Suite">
-    <test name="Users and Unknown Test">
+    <test name="POST Tests">
         <classes>
             <class name="tests.PostTests"/>
+        </classes>
+    </test>
+    <test name="GET Tests">
+        <classes>
+            <class name="tests.GetTests"/>
+        </classes>
+    </test>
+    <test name="PUT Tests">
+        <classes>
+            <class name="tests.PutTests"/>
         </classes>
     </test>
 </suite>
