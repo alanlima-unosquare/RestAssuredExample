@@ -3,7 +3,7 @@
 <suite name="Reqres Suite">
     <test name="Users and Unknown Test">
         <classes>
-            <class name="tests.RestTests"/>
+            <class name="tests.PostTests"/>
         </classes>
     </test>
 </suite>
